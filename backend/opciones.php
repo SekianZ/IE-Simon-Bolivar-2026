@@ -4,10 +4,21 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once __DIR__ . '\BaseDeDatos.php'; // Cambié la barra invertida a diagonal
+require __DIR__ . '\vendor\motor\autoload.php';
+
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$nomDB = $_ENV['DATABASE_NAME'] ;
+$User =$_ENV['DATABASE_USER'] ;
+$host = $_ENV['DATABASE_HOST'] ;
+$contraseña =$_ENV['DATABASE_PASSWORD'] ;
 
 header('Content-Type: application/json');
 
-$db = new BaseDeDatos("localhost", "root", "", "institucion");
+
+$db = new BaseDeDatos($host, $User, $contraseña, $nomDB);
 
 // Implementación de las funciones CRUD
 function agregarEstudiante($datos)

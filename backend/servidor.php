@@ -1,11 +1,16 @@
 <?php
-
+require __DIR__ . '\vendor\motor\autoload.php';
+use Dotenv\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__ . '\vendor\motor\autoload.php';
-$usernamecorreo = 'sebasb256@gmail.com';
-$contraseñacorreo = 'pfwequlymqgndjtj';
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+
+$usernamecorreo = $_ENV['CORREO_EMAIL'] ;
+$contraseñacorreo =$_ENV['CORREO_CONTRASENA'] ;
 
 $response = ['success' => false, 'message' => ''];
 
