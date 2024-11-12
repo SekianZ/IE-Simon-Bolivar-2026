@@ -1,0 +1,95 @@
+/* Estilo general de impresión */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 10px;
+  }
+  
+  /* Estilos de encabezados */
+  h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 0 0 10px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+    color: #34495e;
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0; /* Espacio entre tablas */
+    background-color: #f9f9f9;
+    page-break-inside: avoid; /* Evitar división de tabla entre páginas */
+    transform-origin: top left;
+  }
+  
+  /* Encabezado de la tabla */
+  th {
+    background-color: #3498db;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    position: sticky; /* Hace que los encabezados se mantengan en su tabla */
+    top: 0; /* Alinea encabezados al inicio de cada página */
+    z-index: 1;
+  }
+  
+  /* Filas de tabla */
+  td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  /* Filas alternas */
+  tr:nth-child(odd) td {
+    background-color: #f1f1f1;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #ffffff;
+  }
+  
+  /* Estilo de impresión */
+  @media print {
+    /* Margen mínimo para aprovechar mejor la página */
+    body {
+      margin: 0.5cm;
+    }
+  
+    /* Ajuste automático de escala */
+    table {
+      transform: scale(1);
+      max-height: calc(100vh - 2cm); /* Altura máxima para aprovechar página */
+    }
+  
+    /* Reducir tamaño de fuente y espaciamiento en caso de desbordamiento */
+    tr, td, th {
+      padding: 6px;
+      font-size: 0.85em;
+    }
+  
+    /* Evitar que encabezados y filas se dividan */
+    thead {
+      display: table-header-group; /* Encabezados fijados en cada página */
+    }
+  
+    tr, td, th {
+      page-break-inside: avoid;
+    }
+  
+    /* Separación entre tablas en impresión para evitar confusiones */
+    table + table {
+      margin-top: 10px;
+    }
+  }
+  
