@@ -1,0 +1,187 @@
+/*CUADRO CREAR MENSAJE PERSONALIZADO*/
+.form-mensaje{
+    background-color: #19222ff5;
+    box-shadow: 0 2px 8px #00000080;
+    padding: 2%;
+    margin-block: 20px;
+    border-radius: 5px;
+}
+/*LINEA DE EL CUADRO CREAR MENSAJE PERSONALIZADO*/
+.form-group{
+    padding: 2%;
+    border-radius: 7px;
+    border: 1px solid #00c7ff;
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+.msg-pre{
+    display: flex;
+    margin-block: 20px;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+/*TEXTO*/
+strong[id="Nombre-mensaje"], [id="mensajepredefinido"]{
+    font-size: 15px;
+    font-family: 'calibri';
+    color: white;
+}
+/*INPUT DE NOMBRE DEL MENSAJE PREDEFINIDO*/
+input[id="nombreM"] {
+    width: 80%;
+    border-radius: 5px;
+    background: #ffffff00;
+    box-shadow: 0 2px 8px #00000080;
+    font-family: 'calibri';
+    font-size: 15px;
+    color: white;
+    padding: 1%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+/*INPUT DE NOMBRE DEL MENSAJE PREDEFINIDO:HOVER*/
+input[id="nombreM"]:hover {
+    background-color: #24303cb3;
+    color: #ffffff;
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*DIV DE FUENTE, BOTONES Y COLORES*/
+.container {
+    background-color: #ffffff00;
+    box-shadow: 0 2px 8px #00000080;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    gap: 10px;
+    margin-block-end: 20px;
+}
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+.editortexto-fuente{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*ELIMINA EL PADDING INTERNO QUE CREA EL BORDE BLANCO*/
+.editortexto-fuente input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+/*ELIMINA EL BORDE DE LA MUESTRA DE COLOR*/
+.editortexto-fuente input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+/*INPUT DE COLOR:HOVER*/
+.editortexto-fuente input[type="color"]:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*CONTENEDOR DE BOTONES Y SELECT DE PARRAFO*/
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*INPUT DE MENSAJE PERSONALIZADO*/
+.editor {
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ffffff;
+    padding: 3%;
+    min-height: 50px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    background: #ffffff;
+    color: #000000;
+    margin-block: 20px;
+}
+/*INPUT DE NOMBRE DEL MENSAJE PREDEFINIDO:HOVER*/
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*TABLA DE MENSAJE PERSONALIZADOS*/
+.tabla-mensajes {
+    width: 100%;
+    box-sizing: border-box;
+    margin-block: 20px;
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+.mensaje-thead{
+    color: #ffffff;
+    background-color: #152e4ffa;
+    box-shadow: 0 2px 8px #00000080;
+    font-size: 15px;
+    font-family: 'calibri';
+    border: none;
+}
+.titulo-mensaje{
+    padding: 1%;
+    width: 10%;
+}
+.plantilla-mensaje{
+    padding: 1%;
+    width: 72%;
+}
+.acciones-mensaje{
+    padding: 1%;
+    width: 8%;
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*CELDAS CON LOS NOMBRE*/
+.editable{
+    text-align: center;
+    padding: 1%;
+    font-family: Calibri;
+    color: white;
+    background: #19222ff5;
+    box-shadow: 0 2px 8px #00000080;
+    border: none;
+}
+/*CELDAS CON LOS MENSAJES*/
+.mensaje-realizado{
+    text-align: left;
+    padding: 1%;
+    background: #19222ff5;
+    box-shadow: 0 2px 8px #00000080;
+    border: none;
+}
+/*CELDA DE ELIMINAR*/
+.columna-boton {
+    text-align: center;
+    padding: 1%;
+    background: #19222ff5;
+    box-shadow: 0 2px 8px #00000080;
+    border: none;
+}
+/*"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""*/
+/*BOTON DE ELIMINAR EN LA LISTA DE ALUMNOS*/
+.delete-btn {
+    background-color: #e91e63;
+    color: white;
+    font-family: Calibri;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    height: 35px;
+}
+/*SOMBREADO DE LOS BOTONES AL SELECCIONARLOS*/
+.delete-btn:hover {
+    background-color: #ffffff;
+    color: #e91e63;
+}
