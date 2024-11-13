@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-require __DIR__ . '/vendor/motor/autoload.php';
+require __DIR__ . '/backend/vendor/motor/autoload.php';
 use Dotenv\Dotenv;
 
 
