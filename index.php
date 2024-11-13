@@ -444,7 +444,7 @@
         </div>
     </div>
     <!--Carpeta de Js-->
-    <script src="backend/vendor/motor/plugins/sweetalert2.all.min.js"></script>
+    <script src="backend/jslibrerias/sweetalert2.all.min.js"></script>
     <script src="js/asistencias.js"></script>
     <script src="js/formulario.js"></script>
     <script src="js/mensajes.js"></script>
