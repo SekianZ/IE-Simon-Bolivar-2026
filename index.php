@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-require __DIR__ . '\vendor\motor\autoload.php';
+require __DIR__ . '/vendor/motor/autoload.php';
 use Dotenv\Dotenv;
 
 
@@ -9,7 +9,18 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$host = $_ENV['CORREO_EMAIL'] ?? 'no_cargado';
+$gmail = $_ENV['CORREO_EMAIL'] ?? 'no_cargado';
+$nomDB = $_ENV['DATABASE_NAME'] ;
+$User =$_ENV['DATABASE_USER'] ;
+$host = $_ENV['DATABASE_HOST'] ;
+$contraseña =$_ENV['DATABASE_PASSWORD'] ;
+$port = $_ENV['DATABASE_PORT'] ;
+
+echo $nomDB;
+echo $User;
+echo $contraseña;
+echo $port;
+echo $gmail;
 echo $host; // Muestra "localhost" si la variable se cargó correctamente 
 ?>
 <head>
