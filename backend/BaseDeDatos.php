@@ -6,11 +6,17 @@ class BaseDeDatos
 {
     private $conn;
 
-    public function __construct($host, $usuario, $contraseña, $nombreBaseDatos)
+    // El constructor ahora acepta puerto y db_connection como parámetros
+    public function __construct($host, $usuario, $contraseña, $nombreBaseDatos, $port = 3306, $db_connection = null)
     {
-        $this->conn = new mysqli($host, $usuario, $contraseña, $nombreBaseDatos);
+        // Si no se especifica un db_connection, usar la conexión por defecto
+        if ($db_connection) {
+            $this->conn = new mysqli($host, $usuario, $contraseña, $nombreBaseDatos, $port);
+        } else {
+            $this->conn = new mysqli($host, $usuario, $contraseña, $nombreBaseDatos, $port);
+        }
 
-        // Verificar la conexión
+        // Verificar si la conexión fue exitosa
         if ($this->conn->connect_error) {
             throw new Exception("Conexión fallida: " . $this->conn->connect_error);
         }
