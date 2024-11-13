@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/backend/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 use Dotenv\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

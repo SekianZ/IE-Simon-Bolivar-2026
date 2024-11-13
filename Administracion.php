@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion DataBase</title>
-    <link rel="stylesheet" href="backend/vendor/sweetalert-master/docs/assets/sweetalert/sweetalert.min.js">
     <link rel="stylesheet" href="styles/administracion.css">
     <link rel="stylesheet" href="styles/crud-bloques.css">
     <link rel="stylesheet" href="styles/crud-alumnos.css">
@@ -207,7 +206,7 @@
 
 
     <script src="./js/estadisticas_estudiantes.js"></script>
-    <script src="backend/vendor/motor/plugins/sweetalert2.all.min.js"></script>
+    <script src="backend/jslibrerias/sweetalert2.all.min.js"></script>
     <script src="./js/cruds_acciones.js"></script>
     <script src="./js/cruds.js"></script> <!-- Asegúrate de cambiar la ruta según tu estructura -->
     <script src="./js/administracion.js"></script>
