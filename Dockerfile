@@ -9,3 +9,4 @@ RUN a2enmod rewrite
 
 # Exponer el puerto 80 para acceder al contenedor
 EXPOSE 80
+CMD ["apache2-foreground"]
