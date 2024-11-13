@@ -7,7 +7,7 @@ require_once __DIR__ . '/BaseDeDatos.php'; // Cambié la barra invertida a diago
 require __DIR__ . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable("../.env");
 $dotenv->load();
 
 $nomDB = $_ENV['DATABASE_NAME'] ;
