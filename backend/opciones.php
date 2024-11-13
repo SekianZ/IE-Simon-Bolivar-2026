@@ -10,24 +10,17 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$databaseUrl = $_ENV['DATABASE_URL'];
-
-// Utiliza parse_url() para descomponer la URL
-$parsedUrl = parse_url($databaseUrl);
-
-// Parsear la URL de la base de datos
-$url = parse_url($dbUrl);
-
-// Extraer los datos de la URL de la base de datos
-$host = $url['host'];
-$usuario = $url['user'];
-$contraseña = $url['pass'];
-$nombreBaseDatos = ltrim($url['path'], '/');  // Elimina el '/' al principio de la ruta
+$nomDB = $_ENV['DATABASE_NAME'] ;
+$User =$_ENV['DATABASE_USER'] ;
+$host = $_ENV['DATABASE_HOST'] ;
+$contraseña =$_ENV['DATABASE_PASSWORD'] ;
+$port = $_ENV['DATABASE_PORT'] ;
+$conetcionDB = $_ENV['DATABASE_CONNECTION'] ;
 
 header('Content-Type: application/json');
 
 
-$db = new BaseDeDatos($host, $User, $contraseña, $nomDB);
+$db = new BaseDeDatos($host, $User, $contraseña, $nomDB, $port, $conetcionDB);
 
 // Implementación de las funciones CRUD
 function agregarEstudiante($datos)
