@@ -4,8 +4,6 @@
 require __DIR__ . '/backend/vendor/autoload.php';
 use Dotenv\Dotenv;
 
-
-
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
