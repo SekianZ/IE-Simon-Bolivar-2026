@@ -446,7 +446,7 @@ async function actualizarAsistencia(idEstudiante, fechaCompleta, nuevoEstado) {
             body: formData
         });
 
-        eliminarVacios();
+        await eliminarVacios();
 
 
 

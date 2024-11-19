@@ -2,11 +2,13 @@
 /* Estilos generales */
 #Estudiantes {
     display: flex;
+    position: relative;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-color: #02a7ff70;
     border-radius: 20px;
-    background-color: #c47b6e88;
     color: white;
     width: 95%;
     max-width: 100%;
@@ -14,11 +16,30 @@
     text-align: center;
     margin-top: -20px;
 }
+
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-fondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 /* Estilos para botones */
 #Estudiantes button {
     padding: 8px;
     background-color: #30343c;
-    border: 1px solid #ff6347;
+    border: 1px solid #11dbe2;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -37,7 +58,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #ff6347;
+    background-color: #11dbe2;
     left: -700px;
     z-index: -1;
     transition: .3s ease-in-out all;
@@ -74,7 +95,7 @@
 }
 
 .formulario-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     margin-bottom: 10px;
 }
 
@@ -102,7 +123,7 @@
 }
 
 .tabla-estudiantes-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     text-align: center;
 }
 
@@ -130,7 +151,7 @@
 }
 
 #tablaEstudiantes th {
-    background-color: #ff6347;
+    background-color: #11dbe2;
     color: white;
     font-weight: bold;
     position: sticky; /* Hace que el encabezado se mantenga fijo */
@@ -165,7 +186,7 @@
 }
 
 .estadisticas-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -199,15 +220,38 @@
     }
 }
 
+.cielo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    overflow: hidden; /* Evita que el video se salga del contenedor */
+}
+
+.cielo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir todo el espacio sin deformarse */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+}
 
 /* Título */
 #Estudiantes h1 {
     margin-bottom: 10px;
     font-family: 'Gill Sans', sans-serif;
     font-size: 2rem;
-    color: #ff6347;
-    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+    color: #11dbe2;
+    background-color: rgb(0 0 0 / 72%);
+    padding: 10px; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra en el fondo */
 }
+
 
 /* Contenedor superior con formulario y tabla */
 .superior-container {
@@ -233,7 +277,7 @@
 
 
 .formulario-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     margin-bottom: 10px;
     font-size: 1.4rem;
     font-weight: bold;
@@ -252,13 +296,13 @@
 
 .formulario-container input:focus, .formulario-container select:focus {
     outline: none;
-    border-color: #ff6347; /* Borde cambia de color al enfocar */
+    border-color: #11dbe2; /* Borde cambia de color al enfocar */
 }
 
 /* Botón de agregar estudiante */
 .formulario-container button {
     padding: 10px;
-    background-color: #ff6347;
+    background-color: #11dbe2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -284,7 +328,7 @@
 }
 
 .tabla-estudiantes-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -304,7 +348,7 @@
 }
 
 #tablaEstudiantes th {
-    background-color: #ff6347;
+    background-color: #11dbe2;
     color: white;
     font-weight: bold;
 }
@@ -328,7 +372,7 @@
 }
 
 .bloque-asistencia-container button:hover {
-    background-color: #ff6347;
+    background-color: #11dbe2;
 }
 
 /* Estadísticas (parte inferior) */
@@ -342,7 +386,7 @@
 }
 
 .estadisticas-container h2 {
-    color: #ff6347;
+    color: #11dbe2;
     text-align: center;
     margin-bottom: 10px;
 }

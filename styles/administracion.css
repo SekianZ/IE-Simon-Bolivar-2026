@@ -27,6 +27,7 @@ body {
 }
 
 .navbar {
+    transition: transform 1s ease, background-color 1s ease, box-shadow 1s ease, color 1s ease;
     position: relative;
     padding: 15px;
     text-align: center;
@@ -98,6 +99,26 @@ body {
     color:white;
 }
 
+.espacio {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    overflow: hidden; /* Evita que el video se salga del contenedor */
+}
+
+.espacio video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir todo el espacio sin deformarse */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+}
+
 
 
 
@@ -129,6 +150,7 @@ button {
     z-index: 10;
     overflow: hidden;
     text-transform: uppercase;
+    object-fit: cover;
 }
 
 .regresar {
@@ -142,9 +164,12 @@ button {
     height: 100%;
     position: absolute;
     z-index: -1;
+    object-fit: cover;
     left: -300px;
     transition: .3s ease-in-out all;
 }
+
+
 
 .boton-1 {
     background-color: #30343c; /* Color de fondo inicial del primer botón */
@@ -153,6 +178,7 @@ button {
 
 .boton-1::after {
     background-color: #ffffff; /* Color de animación para el fondo del primer botón */
+    object-fit: cover;
 }
 
 .boton-2 {
@@ -162,12 +188,14 @@ button {
 
 .boton-2::after {
     background-color: #30343c; /* Color de animación para el fondo del segundo botón */
+    object-fit: cover;
 }
 
 /* Cambiar color de texto y de fondo del botón al hacer hover */
 .boton-Inicio:hover {
     transform: translateY(-8px);
     box-shadow: 0 4px 20px rgba(226, 222, 221, 0.6);
+    object-fit: cover;
 }
 
 .boton-1:hover {
@@ -181,7 +209,8 @@ button {
 }
 
 .boton-Inicio:hover::after {
-    left: 0;
+    left: 0px;
+    object-fit: cover;
 }
 
 .boton-Inicio span {
@@ -318,23 +347,23 @@ button {
 
 /* Posiciones y retrasos de las estrellas */
 .shooting-star:nth-child(1) {
-    left: 30vw;
+    left: 50vw;
     animation-delay: 0s;
 }
 
 .shooting-star:nth-child(2) {
-    left: 40vw;
-    animation-delay: 0.5s;
+    left: 30vw;
+    animation-delay: 0s;
 }
 
 .shooting-star:nth-child(3) {
-    left: 50vw;
-    animation-delay: 1s;
+    left: 45vw;
+    animation-delay: 0.5s;
 }
 
 .shooting-star:nth-child(4) {
     left: 60vw;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
 }
 
 
@@ -450,15 +479,12 @@ body {
 
 /* Fondo para la sección de Inicio */
 #Inicio {
-    background-color: #ff634700; /* Color de fondo para la sección de inicio */
+    background-color: #c9ff0600; /* Color de fondo para la sección de inicio */
 }
 
 /* Fondo para la sección de Bloques */
 
 /* Fondo para la sección de Estudiantes */
-#Estudiantes {
-    background-color: #ffe0b2; /* Color de fondo para los estudiantes */
-}
 
 /* Fondo para la sección de Asistencia */
 #asistencia {

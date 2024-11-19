@@ -66,12 +66,12 @@ function mostrarContenido(seccion) {
 
             break;
         case 'Estudiantes':
-            navBar.style.backgroundColor = '#ff6347';
-            btnRegresar.style.backgroundColor = '#ff6347'; // Color de fondo para el botón de regresar
+            navBar.style.backgroundColor = 'rgba(34, 155, 185, 0.664)';
+            btnRegresar.style.backgroundColor = 'rgba(34, 155, 185, 0.664)'; // Color de fondo para el botón de regresar
             btnRegresar.style.color = 'white'; // Color de texto para el botón de regresar
 
-            document.body.style.backgroundColor = '#9b9898'; // Fondo de la sección de Estudiantes
-            regColor = 'orange'; // Color de texto para los links en la sección 'Estudiantes'
+            document.body.style.backgroundColor = '#568cc2'; // Fondo de la sección de Estudiantes
+            regColor = 'black'; // Color de texto para los links en la sección 'Estudiantes'
 
             break;
         case 'asistencia':

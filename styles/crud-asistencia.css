@@ -1,169 +1,226 @@
-/* Estilos generales para la sección de asistencia */
+/* Estilo general para la sección */
 #asistencia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     padding: 20px;
-    border-radius: 20px;
-    color: white;
-    height: 100vh; /* Ocupará todo el alto de la ventana */
-    width: 100%; /* Ocupará todo el ancho de la ventana */
-    max-width: 100%;
-    overflow-y: auto;
-    text-align: center; /* Asegura que todo el contenido sea centrado */
+    background-color: #f4f4f4; /* Color de fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    width: 90%;
+    margin: 20px auto; /* Centrado horizontal */
+    font-family: 'Arial', sans-serif;
 }
 
-/* Título */
+/* Estilo para el título */
 #asistencia h1 {
-    font-family: 'Gill Sans', sans-serif;
-    font-size: 2.5rem;
-    color: #ff6347;
-    text-shadow: 1px 1px 5px rgb(0, 0, 0);
-    margin-bottom: 30px;
-    width: 100%;
+    font-size: 2rem;
+    color: #333; /* Color de texto oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(17, 219, 226, 0.2); /* Fondo sutil */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra en el fondo del título */
 }
 
-/* Botón de regresar */
+/* Estilo para los botones */
 #asistencia button {
-    padding: 10px 20px;
-    background-color: #30343c;
-    border: 1px solid #ff6347;
-    font-family: 'Gill Sans', sans-serif;
-    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    background-color: #11dbe2; /* Color principal */
+    border: none;
     border-radius: 5px;
+    color: white;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Espaciado entre botones */
 }
 
 #asistencia button:hover {
-    background-color: #ff7b5e;
-    transform: scale(1.05);
+    background-color: #0ba1ac; /* Color más oscuro al pasar el ratón */
 }
 
-/* Contenedor de controles (mes, mostrar, imprimir) */
-#contenedorControles {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; /* Centrado de los controles */
-    gap: 20px;
-    margin-bottom: 20px;
+/* Estilo para el selector de meses */
+#asistencia label {
+    font-size: 1rem;
+    color: #555; /* Color del texto */
+    display: block;
+    margin-top: 20px;
+}
+
+#asistencia select {
     width: 100%;
-}
-
-/* Selector de mes */
-#month {
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Borde gris claro */
     border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #3c3f48;
-    color: white;
-    width: 100%;
-    max-width: 250px;
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
+    margin-bottom: 15px;
+    background-color: #fff; /* Fondo blanco */
 }
 
-#month:focus {
-    outline: none;
-    border-color: #ff6347;
-}
-
-/* Botones de mostrar e imprimir */
-#asistencia button:nth-child(3), #asistencia button:nth-child(4) {
-    padding: 10px 20px;
-    background-color: #30343c;
-    border: 1px solid #ff6347;
-    font-family: 'Gill Sans', sans-serif;
-    color: rgb(255, 255, 255);
+/* Estilo para los contenedores */
+#contenedorControles, #contenedorAsistencias {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-#asistencia button:nth-child(3):hover, #asistencia button:nth-child(4):hover {
-    background-color: #ff6347;
-    transform: scale(1.05);
-}
-
-/* Contenedor de asistencias */
-#contenedorAsistencias {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #30343c;
-    border-radius: 10px;
-    width: 100%;
-    overflow-y: auto;
-    flex-grow: 1; /* Esto permite que el contenedor de asistencias ocupe el espacio restante */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrado del contenido dentro del contenedor de asistencias */
-}
-
-#contenedorAsistencias h2 {
-    color: #ff6347;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Estilo para cada fila de asistencias (Tabla de Asistencias) */
-.tablaAsistencias {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center; /* Centrado de texto en la tabla */
-}
-
-.tablaAsistencias th, .tablaAsistencias td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ff6347;
-    color: white;
-}
-
-.tablaAsistencias th {
-    background-color: #30343c;
-}
-
-.tablaAsistencias td {
-    background-color: #464d56;
-}
-
-.tablaAsistencias td:hover {
-    background-color: #ff6347;
-}
-
-/* Estilo responsivo para dispositivos móviles */
-@media screen and (max-width: 768px) {
+/* Responsive para dispositivos pequeños */
+@media (max-width: 600px) {
     #asistencia {
-        padding: 10px;
+        padding: 15px;
     }
 
     #asistencia h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
+    #asistencia button {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    #asistencia select {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilo general para la sección de asistencia */
+#asistencia {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: -20px;
+}
+
+/* Contenedor principal de controles */
+#contenedorControles {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre los controles */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de controles de año (anterior y siguiente) */
+#contenedorControles .controles-anio {
+    display: flex;
+    gap: 10px; /* Espaciado entre los controles */
+}
+
+/* Contenedor de controles de mes y botones */
+#contenedorControles .controles-mes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Selector de meses */
+#month {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Botones debajo del selector de mes */
+#contenedorControles button {
+    padding: 8px 15px;
+    background-color: #11dbe2;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contenedorControles button:hover {
+    background-color: #0ba1ac;
+}
+
+/* Estilo para los contenedores de las asistencias */
+#contenedorAsistencias {
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
+    margin-top: 20px;
+}
+
+/* Estilo para las tablas de asistencia */
+#asistencia table {
+    width: 100%;
+    border-collapse: collapse; /* Eliminar espacio entre bordes */
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados de la tabla */
+#asistencia table thead {
+    background-color: #11dbe2; /* Fondo azul claro */
+    color: white;
+    font-weight: bold;
+}
+
+#asistencia table thead th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Celdas de la tabla */
+#asistencia table tbody td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* Filas alternadas */
+#asistencia table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#asistencia table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Resaltar fila al pasar el ratón */
+#asistencia table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Totales destacados */
+#asistencia table tbody td:last-child {
+    font-weight: bold;
+    background-color: rgba(17, 219, 226, 0.2);
+}
+
+/* Títulos para las tablas de totales */
+#asistencia h2, #asistencia h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #11dbe2;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
     #contenedorControles {
+        flex-direction: column; /* En pantallas pequeñas, los controles se alinean verticalmente */
         gap: 15px;
     }
 
     #month {
-        font-size: 14px;
-        max-width: 200px;
+        font-size: 0.9rem;
     }
 
-    #asistencia button {
-        padding: 8px 16px;
-        font-size: 14px;
+    #contenedorControles button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 
-    /* Ajuste en la tabla de asistencias */
-    .tablaAsistencias th, .tablaAsistencias td {
-        padding: 8px;
-        font-size: 14px;
+    #asistencia table {
+        font-size: 0.9rem;
     }
 }

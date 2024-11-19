@@ -27,7 +27,12 @@
         </div>
     <div class="contenido-principal">
         <section id="Inicio" style="display: block;">
-            <div class="shooting-star"></div>
+            <div class="espacio">
+                <video autoplay loop muted playsinline>
+                    <source src="multimedia/espacio.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
@@ -53,6 +58,7 @@
                     <li><a href="#">Actualización en el sistema de asistencia</a></li>
                 </ul>
             </section>
+            
 
 
         </section>
@@ -111,6 +117,13 @@
         </section>
         
         <section id="Estudiantes" style="display: none;">
+            <div class="video-fondo">
+                <video autoplay loop muted playsinline>
+                    <source src="multimedia/cielo2.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+            </div>
+
             <h1>CRUD ESTUDIANTES</h1>
         
             <!-- Contenedor superior con formulario y tabla -->
