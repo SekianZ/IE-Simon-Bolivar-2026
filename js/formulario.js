@@ -39,7 +39,7 @@ async function enviarCorreo(event) {
         dataToSend.set('para[]', destinatario);
 
         try {
-            const response = await fetch('../IESimonBolivar2026-Version1.0/backend/servidor.php', {
+            const response = await fetch('backend/servidor.php', {
                 method: 'POST',
                 body: dataToSend
             });

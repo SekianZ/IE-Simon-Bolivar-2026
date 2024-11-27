@@ -1,4 +1,10 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+
+
 require __DIR__ . '/vendor/autoload.php';
 use Dotenv\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -52,6 +58,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress($correo, $nombre);
         $mail->Subject = $asunto;
         $mail->Body = $mensajePersonalizado;
+
+        // Adjuntar archivo si se ha subido
+        if (!empty($_FILES['archivo']['name'])) {
+            $fileTempPath = $_FILES['archivo']['tmp_name'];
+            $fileName = $_FILES['archivo']['name'];
+            $mail->addAttachment($fileTempPath, $fileName);
+        }
 
         try {
             $mail->send();
