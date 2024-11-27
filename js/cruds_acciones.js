@@ -26,6 +26,7 @@ window.addEventListener('load', function () {
 });
 
 function mostrarContenido(seccion) {
+    restearpartes();
     // Ocultar todas las secciones
     const btnRegresar = document.getElementById('regresar');
     const navBar = document.getElementById('navbar');
@@ -357,6 +358,5 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('bloqueEstudiantes').addEventListener('change', async function () {
     await colocarEstudiantes();
     await valorbloquesestudiantes();
-    restearpartes();
 });
 

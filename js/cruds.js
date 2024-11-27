@@ -80,10 +80,20 @@ async function validarFormulario(formularioHTML = null, usarSwal = false) {
     // Verifica si formularioHTML no es null
     if (formularioHTML !== null) {
         formularioHTML.querySelectorAll('input, textarea, select').forEach(campo => {
-            if (campo.hasAttribute('required') && campo.value.trim() === "") {
-                errores.push(`El campo '${campo.name}' es obligatorio.`);
+            // Validar campos de tipo input, textarea y select
+            if (campo.hasAttribute('required')) {
+                // Verificar los campos input y textarea
+                if (campo.type !== 'select-one' && campo.value.trim() === "") {
+                    errores.push(`El campo '${campo.name}' es obligatorio.`);
+                }
+
+                // Verificar los campos select
+                if (campo.type === 'select-one' && campo.value.trim() === "" || campo.value === "Seleccione...") {
+                    errores.push(`El campo '${campo.name}' es obligatorio.`);
+                }
             }
 
+            // Validar si el campo es un correo electrónico
             if (campo.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campo.value)) {
                 errores.push(`El campo '${campo.name}' debe ser un correo electrónico válido.`);
             }
@@ -103,11 +113,11 @@ async function validarFormulario(formularioHTML = null, usarSwal = false) {
         if (errores.length > 0) return false;
     }
 
-    // Preguntar confirmación para enviar el formulario
+    // Preguntar confirmación para enviar el formulario si se usa Swal
     if (usarSwal) {
         const result = await Swal.fire({
             title: '¿Estás seguro?',
-            text: "Estás a punto de realizar esta accion",
+            text: "Estás a punto de realizar esta acción",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sí, hazla',

@@ -32,27 +32,54 @@
 });*/
 
 
-let estadoPorDefecto = {
-  asistencias: 0,
-  faltas: 0,
-  tardanzas: 0,
-};
-
 function restearpartes() {
-  // Reiniciar los valores de asistencia a los valores por defecto
-  document.getElementById("nombre-estudiante").textContent = '';
+  // Establecer los valores predeterminados para las estadísticas
+  const estadoPorDefecto = {
+    asistencias: 0,  // Valor predeterminado de asistencias
+    faltas: 0,       // Valor predeterminado de faltas
+    tardanzas: 0     // Valor predeterminado de tardanzas
+  };
+
+    // Restablecer el select "bloqueEstudiantes" al primer índice (0)
+    const selectBloqueEstudiantes = document.getElementById('bloqueEstudiantes');
+    if (selectBloqueEstudiantes) {
+      selectBloqueEstudiantes.selectedIndex = 0; // Establecer la opción seleccionada a la primera (índice 0)
+    }
+  
+    // Restablecer el select "bloqueEstudianteid" al primer índice (0)
+    const selectBloqueEstudianteid = document.getElementById('bloqueEstudianteid');
+    if (selectBloqueEstudianteid) {
+      selectBloqueEstudianteid.selectedIndex = 0; // Establecer la opción seleccionada a la primera (índice 0)
+    }
+
+  // Reiniciar los valores de la sección de estadísticas
+  document.getElementById("nombre-estudiante").textContent = '';  // Limpiar el nombre del estudiante
   document.getElementById("asistencias").textContent = estadoPorDefecto.asistencias;
   document.getElementById("faltas").textContent = estadoPorDefecto.faltas;
   document.getElementById("tardanzas").textContent = estadoPorDefecto.tardanzas;
 
-  // Limpiar detalles adicionales
+  // Limpiar los detalles adicionales
   document.getElementById("correo").textContent = "";
   document.getElementById("bloque").textContent = "";
 
+  // Limpiar los datos del estudiante
+  document.getElementById("NombreEstudiante").textContent = '';
+  document.getElementById("CorreoEstudiante").textContent = '';
+
+  // Limpiar el contenedor de asistencias
   const contenedorAsistencias = document.getElementById('contenedorAsistencias');
-  contenedorAsistencias.innerHTML = ''; // Limpia el contenido de asistencias
+  contenedorAsistencias.innerHTML = '';  // Limpia el contenido de las asistencias
+  
+  // Limpiar cualquier otro contenedor relacionado a los estudiantes (si es necesario)
+  const contenedorEstudiantes = document.getElementById('tablaEstudiantes');
+  if (contenedorEstudiantes) {
+    const tbody = contenedorEstudiantes.querySelector('tbody');
+    tbody.innerHTML = ''; // Limpiar la lista de estudiantes
+    
+  }
 
 }
+
 
 
 

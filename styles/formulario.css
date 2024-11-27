@@ -80,13 +80,13 @@ input[id="asunto"]:hover {
 /*DIV DE LOS CHECKBOX Y SUS RESPECTIVO BLOQUES*/
 #bloques {
     display: flex;
-    align-items: stretch;
-    flex-direction: column;
-    flex-wrap: wrap;
     align-content: space-around;
-    padding: 1%;
+    padding: 2%;
     max-height: 130px;
     overflow-y: auto;
+    flex-wrap: nowrap;
+    gap: 5%;
+    margin-bottom: 10px;
 }
 
 /*CHECKBOX*/
