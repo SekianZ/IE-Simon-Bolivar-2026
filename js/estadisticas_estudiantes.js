@@ -39,12 +39,6 @@ function restearpartes() {
     faltas: 0,       // Valor predeterminado de faltas
     tardanzas: 0     // Valor predeterminado de tardanzas
   };
-
-    // Restablecer el select "bloqueEstudiantes" al primer índice (0)
-    const selectBloqueEstudiantes = document.getElementById('bloqueEstudiantes');
-    if (selectBloqueEstudiantes) {
-      selectBloqueEstudiantes.selectedIndex = 0; // Establecer la opción seleccionada a la primera (índice 0)
-    }
   
     // Restablecer el select "bloqueEstudianteid" al primer índice (0)
     const selectBloqueEstudianteid = document.getElementById('bloqueEstudianteid');
