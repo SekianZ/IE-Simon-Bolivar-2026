@@ -9,6 +9,16 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `institucion`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +54,7 @@ CREATE TABLE `estudiantes` (
   `id_estudiante` int(11) NOT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `correo` varchar(30) NOT NULL,
+  `descripcion` text DEFAULT '\'Sin comentarios\'',
   `id_bloque` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -218,6 +229,8 @@ ALTER TABLE `mensaje_estudiantes`
   ADD CONSTRAINT `mensaje_estudiantes_ibfk_1` FOREIGN KEY (`id_mensaje`) REFERENCES `mensajes` (`id_mensaje`),
   ADD CONSTRAINT `mensaje_estudiantes_ibfk_2` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id_estudiante`);
 COMMIT;
+
+
 
 ************* Aqui termina de copiar antes de esta linea
 
