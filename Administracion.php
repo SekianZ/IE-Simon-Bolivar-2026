@@ -134,6 +134,7 @@
                     <form id="formularioAgregarEstudiante" onsubmit="event.preventDefault();">
                         <input type="text" id="NombreEstudiante" name="NombreEstudiante" placeholder="Nombre del Estudiante" required>
                         <input type="email" id="CorreoEstudiante" name="CorreoEstudiante" placeholder="Correo del Estudiante" required>
+                        <input type="text" id="descripcionEstudiante" name="descripcionEstudiante" placeholder="Descripción del Estudiante">
                         <select id="bloqueEstudianteid" name="bloqueEstudianteid">
                             <!-- Opciones de bloques -->
                         </select>
@@ -149,6 +150,7 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Correo</th>
+                                <th>Descripción</th>
                                 <th>Actualizar</th>
                                 <th>Eliminar</th>
                             </tr>

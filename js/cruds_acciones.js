@@ -248,12 +248,16 @@ async function colocarEstudiantes() {
         celdaCorreo.textContent = estudiante.correo; // Asumiendo que el correo es una propiedad del estudiante
         fila.appendChild(celdaCorreo);
 
+        const celdaDescripcion = document.createElement('td');
+        celdaDescripcion.textContent = estudiante.descripcion; // Asumiendo que el correo es una propiedad del estudiante
+        fila.appendChild(celdaDescripcion);
+
         // Crear celda para el botón de actualizar
         const celdaActualizar = document.createElement('td');
         const botonActualizar = document.createElement('button');
         botonActualizar.textContent = 'Actualizar';
         botonActualizar.classList.add('btn', 'btn-warning'); // Añade clases para estilos, si es necesario
-        botonActualizar.onclick = () => mostrarFormularioActualizacion(estudiante.id_estudiante, fila, estudiante.nombre, estudiante.correo, estudiante.id_bloque); // Llama a la función de actualización
+        botonActualizar.onclick = () => mostrarFormularioActualizacion(estudiante.id_estudiante, fila, estudiante.nombre, estudiante.correo,estudiante.descripcion, estudiante.id_bloque); // Llama a la función de actualización
         celdaActualizar.appendChild(botonActualizar);
         fila.appendChild(celdaActualizar);
 
@@ -271,9 +275,10 @@ async function colocarEstudiantes() {
     });
 }
 
-async function mostrarFormularioActualizacion(idEstudiante, fila, nombreA, correo, bloqueid) {
+async function mostrarFormularioActualizacion(idEstudiante, fila, nombreA, correo,descripcion, bloqueid) {
     console.log(idEstudiante);
     console.log(bloqueid);
+    console.log(descripcion);
     // Comprobar si ya hay un formulario de actualización en pantalla
     if (document.getElementById(`formulario-actualizacion-${idEstudiante}`)) return;
 
@@ -305,6 +310,17 @@ async function mostrarFormularioActualizacion(idEstudiante, fila, nombreA, corre
     inputCorreo.placeholder = 'Nuevo Correo';
     inputCorreo.classList.add('form-control');
 
+    // Etiqueta y campo de entrada para correo
+    const labelDescipcion = document.createElement('label');
+    labelDescipcion.textContent = 'Nueva Descripción:';
+    labelDescipcion.classList.add('form-label');
+
+    const inputDescripcion = document.createElement('input');
+    inputDescripcion.type = 'text';
+    inputDescripcion.value = descripcion;
+    inputCorreo.placeholder = 'Nuevan Descripción';
+    inputCorreo.classList.add('form-control');
+
     // Etiqueta y campo de selección para bloque
     const labelBloque = document.createElement('label');
     labelBloque.textContent = 'Seleccionar Bloque:';
@@ -320,7 +336,7 @@ async function mostrarFormularioActualizacion(idEstudiante, fila, nombreA, corre
     const botonGuardar = document.createElement('button');
     botonGuardar.textContent = 'Guardar';
     botonGuardar.classList.add('btn', 'btn-success', 'mt-2');
-    botonGuardar.onclick = () => btnActualizarEstudiante(idEstudiante, inputNombre.value, inputCorreo.value, bloqueSelect.value);
+    botonGuardar.onclick = () => btnActualizarEstudiante(idEstudiante, inputNombre.value, inputCorreo.value, bloqueSelect.value,inputDescripcion.value);
 
     // Botón para cancelar
     const botonCancelar = document.createElement('button');
@@ -333,6 +349,8 @@ async function mostrarFormularioActualizacion(idEstudiante, fila, nombreA, corre
     celdaFormulario.appendChild(inputNombre);
     celdaFormulario.appendChild(labelCorreo);
     celdaFormulario.appendChild(inputCorreo);
+    celdaFormulario.appendChild(labelDescipcion);
+    celdaFormulario.appendChild(inputDescripcion);
     celdaFormulario.appendChild(labelBloque);
     celdaFormulario.appendChild(bloqueSelect);
     celdaFormulario.appendChild(botonGuardar);

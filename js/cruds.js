@@ -268,9 +268,10 @@ async function btnAgregarEstudiante() {
     const nameE = document.getElementById("NombreEstudiante").value;
     const correo = document.getElementById("CorreoEstudiante").value;
     const bloqueid = document.getElementById("bloqueEstudianteid").value;
+    const descripcionEstudiante = document.getElementById("descripcionEstudiante").value;
     const formularioHTML = document.getElementById("formularioAgregarEstudiante");
 
-    const respuesta = await procesarFormulario('agregar', 'estudiante', { nameE: nameE, correo: correo, id_bloque: bloqueid }, formularioHTML);
+    const respuesta = await procesarFormulario('agregar', 'estudiante', { nameE: nameE, correo: correo,descripcion: descripcionEstudiante, id_bloque: bloqueid }, formularioHTML);
     if (respuesta) {
         await colocarEstudiantes();
         document.getElementById("formularioAgregarEstudiante").reset();
@@ -278,12 +279,13 @@ async function btnAgregarEstudiante() {
     await valorbloquesestudiantes();
 }
 
-async function btnActualizarEstudiante(id, newnameE, newcorreo, newid_bloque) {
+async function btnActualizarEstudiante(id, newnameE, newcorreo, newid_bloque, newdescriptionEstudiante) {
     console.log(id);
     console.log(newnameE);
     console.log(newcorreo);
     console.log(newid_bloque);
-    const respuesta = await procesarFormulario('actualizar', 'estudiante', { id_estudiante: id, newnameE: newnameE, newcorreo: newcorreo, newid_bloque: newid_bloque });
+    console.log(newdescriptionEstudiante);
+    const respuesta = await procesarFormulario('actualizar', 'estudiante', { id_estudiante: id, newnameE: newnameE,newdescripcion: newdescriptionEstudiante, newcorreo: newcorreo, newid_bloque: newid_bloque });
     if (respuesta) {
         await colocarEstudiantes();
         document.getElementById("formularioAgregarEstudiante").reset();

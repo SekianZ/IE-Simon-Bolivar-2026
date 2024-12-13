@@ -26,7 +26,7 @@ $db = new BaseDeDatos($host, $User, $contraseña, $nomDB, $port);
 function agregarEstudiante($datos)
 {
     global $db;  // Accede a la instancia de $db
-    return $db->agregarEstudiante($datos['nameE'], $datos['correo'], $datos['id_bloque']);
+    return $db->agregarEstudiante($datos['nameE'], $datos['correo'],$datos['descripcion'],$datos['id_bloque']);
 }
 
 function agregarBloque($datos)
@@ -39,7 +39,7 @@ function agregarBloque($datos)
 function actualizarEstudiante($datos)
 {
     global $db;  // Accede a la instancia de $db
-    return $db->actualizarEstudiante($datos['newnameE'], $datos['newcorreo'], $datos['newid_bloque'], $datos['id_estudiante']);
+    return $db->actualizarEstudiante($datos['newnameE'], $datos['newcorreo'],$datos['newdescripcion'], $datos['newid_bloque'], $datos['id_estudiante']);
 }
 
 function actualizarBloque($datos)

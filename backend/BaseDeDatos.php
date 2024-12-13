@@ -340,10 +340,10 @@ class BaseDeDatos
     }
 
     // Método para agregar un estudiante
-    public function agregarEstudiante($nombre, $correo, $bloque_id)
+    public function agregarEstudiante($nombre, $correo, $descripcion, $bloque_id)
     {
 
-        $query = "INSERT INTO estudiantes (nombre, correo, id_bloque) VALUES ('$nombre', '$correo', $bloque_id)";
+        $query = "INSERT INTO estudiantes (nombre, correo,descripcion,id_bloque) VALUES ('$nombre', '$correo','$descripcion', $bloque_id)";
         return $this->ejecutarConsulta($query);
     }
 
@@ -366,10 +366,10 @@ class BaseDeDatos
 
 
     // Método para actualizar un estudiante
-    public function actualizarEstudiante($nombre, $correo, $bloque_id, $id_estudiante)
+    public function actualizarEstudiante($nombre, $correo,$descripcion, $bloque_id, $id_estudiante)
     {
 
-        $query = "UPDATE estudiantes SET nombre = '$nombre', correo = '$correo', id_bloque = $bloque_id WHERE id_estudiante = $id_estudiante";
+        $query = "UPDATE estudiantes SET nombre = '$nombre', correo = '$correo',descripcion = '$descripcion' , id_bloque = $bloque_id WHERE id_estudiante = $id_estudiante";
         return $this->ejecutarConsulta($query);
     }
 
